@@ -51,6 +51,28 @@ namespace Valorant_Discord_Bot.DataBase
             }
         }
 
+        public static bool UpdatePassword(DataModels model, string newpassword)
+        {
+            try
+            {
+                if (!Directory.Exists(DataBaseL))
+                    Directory.CreateDirectory(DataBaseL);
+
+                if (!File.Exists($"{DataBaseL}\\{model.valorantDetails.Username}.Data"))
+                    return false;
+
+                model.valorantDetails.password = newpassword;
+
+                File.WriteAllText($"{DataBaseL}\\{model.valorantDetails.Username}.Data", JsonConvert.SerializeObject(model, Formatting.Indented));
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public static DataBaseResponse CheckForUser(string username)
         {
             if (!File.Exists($"{DataBaseL}\\{username}.Data"))
