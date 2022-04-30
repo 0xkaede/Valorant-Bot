@@ -1,6 +1,6 @@
 # Valorant Discord Bot
 
-This valorant bot was created for users to get there Valorant daily shop with being on the Valorant Game!
+This valorant bot was created for users to get there Valorant daily shop without being on the Valorant Game!
 
 ## Configuration.cs
 You will need to add the Configuration.cs your self. 
