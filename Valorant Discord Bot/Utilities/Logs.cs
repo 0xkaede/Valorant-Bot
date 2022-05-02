@@ -40,11 +40,11 @@ namespace Valorant_Discord_Bot.Utilities
             return true;
         }
 
-        public static bool ReqAPI(string a)
+        public static bool DataBase(string a)
         {
             Defualt("[");
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Defualt("Req!");
+            Defualt("DB!");
             Defualt("] ");
             Console.WriteLine(a);
             return true;

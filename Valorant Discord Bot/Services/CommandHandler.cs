@@ -25,7 +25,15 @@ namespace Valorant_Discord_Bot.Services
 
             _discord.Ready += OnReady;
             _discord.MessageReceived += OnMessageRecived;
+            _discord.JoinedGuild += OnJoinedGuild;
+            _discord.LeftGuild += OnJLeftGuild;
         }
+
+        private async Task OnJLeftGuild(SocketGuild Guild)
+            => Logs.Guilds($"We Left {Guild.Name}");
+
+        private async Task OnJoinedGuild(SocketGuild Guild)
+            => Logs.Guilds($"We Joined {Guild.Name}");
 
         private async Task OnMessageRecived(SocketMessage arg)
         {
@@ -46,7 +54,6 @@ namespace Valorant_Discord_Bot.Services
 
                     Logs.Error($"The following error occured from an executed command from {usercommand}: {reason}");
                 }
-                Logs.CommandSent($"{usercommand}: Just executed an command");
             }
         }
 
@@ -60,9 +67,9 @@ namespace Valorant_Discord_Bot.Services
             Logs.Guilds($"Bot is currently in {_discord.Guilds.Count} Guild");
             foreach (var guild in _discord.Guilds)
             {
-                string[] guildinfo = { guild.Name, guild.DefaultChannel.CreateInviteAsync().Result.ToString() };
+                string[] guildinfo = { guild.Name };
 
-                Logs.Guilds($"{guildinfo[0]} | {guildinfo[1]}");
+                Logs.Guilds($"{guildinfo[0]}");
             }
             return Task.CompletedTask;
         }

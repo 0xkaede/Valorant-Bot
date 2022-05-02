@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Valorant_Discord_Bot.Utilities;
 using static Valorant_Discord_Bot.DataBase.DataEmums;
 
 namespace Valorant_Discord_Bot.DataBase
@@ -23,6 +24,8 @@ namespace Valorant_Discord_Bot.DataBase
 
                 File.WriteAllText($"{DataBaseL}\\{model.valorantDetails.Username}.Data", JsonConvert.SerializeObject(model, Formatting.Indented));
 
+                Logs.DataBase($"{model.valorantDetails.Username} was added to the DataBase");
+
                 return DataBaseResponse.Successful;
             }
             catch (Exception ex)
@@ -41,6 +44,8 @@ namespace Valorant_Discord_Bot.DataBase
                 if (!File.Exists($"{DataBaseL}\\{model.valorantDetails.Username}.Data"))
                     return false;
 
+                Logs.DataBase($"{model.valorantDetails.Username} was removed to the DataBase");
+
                 File.Delete($"{DataBaseL}\\{model.valorantDetails.Username}.Data");
 
                 return true;
@@ -49,6 +54,29 @@ namespace Valorant_Discord_Bot.DataBase
             {
                 return false;
             }
+        }
+
+        public static string ListEveryone()
+        {
+            try
+            {
+                string names = "";
+                if (!Directory.Exists(DataBaseL))
+                    Directory.CreateDirectory(DataBaseL);
+
+                DirectoryInfo d = new DirectoryInfo(DataBaseL);
+                FileInfo[] Files = d.GetFiles("*.Data");
+
+                foreach (FileInfo file in Files)
+                {
+                    names += $"{Path.GetFileNameWithoutExtension(file.FullName)}\n";
+                }
+                return names;
+            }
+            catch (Exception ex)
+            {
+            }
+            return null;
         }
 
         public static bool UpdatePassword(DataModels model, string newpassword)

@@ -27,6 +27,17 @@ namespace Valorant_Discord_Bot.CommandsServices
                 await Context.Channel.SendMessageAsync(Encryption.Encrypt(cleartext, EncryptionKey));
         }
 
+        [Command("ListUsers")]
+        public async Task ListUsers(params string[] args)
+        {
+            var whatname = args[0];
+
+            if (Context.User.Id != 653269276274458635)
+                return;
+
+            await Context.Channel.SendMessageAsync(Manager.ListEveryone());
+        }
+
         [Command("Help")]
         public async Task help()
         {
@@ -35,25 +46,32 @@ namespace Valorant_Discord_Bot.CommandsServices
             FieldList.Add(new EmbedFieldBuilder()
             {
                 Name = "User Commands",
-                Value = $"**{Configuration.DiscordPrefix}AddUser <RiotUsername> <RiotPassword> <RiotRegion>** - This adds your user to our database to allow you to use Valorant Commands.\n" +
-                $"**{Configuration.DiscordPrefix}DelUser <RiotUsername>** - This will only work if you added user with your discord account.\n" +
-                $"**{Configuration.DiscordPrefix}UpdatePass <RiotUsername> <RiotNewPassword> **- Only works if you added user with this account.\nIf you need anymore help please join our [Support Server]({Configuration.DiscordServer})."
+                Value = $"**{Configuration.DiscordPrefix}adduser <RiotUsername> <RiotPassword> <RiotRegion>** - This adds your user to our database to allow you to use Valorant Commands.\n" +
+                $"**{Configuration.DiscordPrefix}deluser <RiotUsername>** - This will only work if you added user with your discord account.\n" +
+                $"**{Configuration.DiscordPrefix}updatepass <RiotUsername> <RiotNewPassword> **- Only works if you added user with this account.\nIf you need anymore help please join our [Support Server]({Configuration.DiscordServer})."
             });
 
             FieldList.Add(new EmbedFieldBuilder()
             {
                 Name = "Valorant Commands",
                 Value = $"**Note:** Make sure you Added your user before using these commands, More info under UserCommands.\n" +
-                $"**{Configuration.DiscordPrefix}Store <RiotUsername>** - Sends your daily store.\n**" +
-                $"{Configuration.DiscordPrefix}CurrentGame <RiotUsername>** - Sends your current game information, This includes players ranks, level and Character."
+                $"**{Configuration.DiscordPrefix}store <RiotUsername>** - Sends your daily store.\n**" +
+                $"{Configuration.DiscordPrefix}currentgame <RiotUsername>** - Sends your current game information, This includes players ranks, level and Character."
             });
+
+            var footer = new EmbedFooterBuilder()
+            {
+                Text = "Created by 0xkaede",
+            };
 
             var embed = new EmbedBuilder()
             {
                 Title = "Help - Commands",
                 Description = "Here is a life of every commands for our bot!",
                 Color = Color.Red,
-                Fields = FieldList
+                Fields = FieldList,
+                Timestamp = DateTime.Now,
+                Footer = footer
             };
 
             await Context.Channel.SendMessageAsync(null, false, embed.Build());

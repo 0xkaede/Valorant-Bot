@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\Valorant Discord Bot\\Valorant Discord Bot\\Valorant Discord Bot.csproj": {}
+    "C:\\Users\\User\\Documents\\Valorant-Bot\\Valorant Discord Bot\\Valorant Discord Bot.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\Valorant Discord Bot\\Valorant Discord Bot\\Valorant Discord Bot.csproj": {
+    "C:\\Users\\User\\Documents\\Valorant-Bot\\Valorant Discord Bot\\Valorant Discord Bot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\Valorant Discord Bot\\Valorant Discord Bot\\Valorant Discord Bot.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\Valorant-Bot\\Valorant Discord Bot\\Valorant Discord Bot.csproj",
         "projectName": "Valorant Discord Bot",
-        "projectPath": "C:\\Users\\User\\Documents\\Valorant Discord Bot\\Valorant Discord Bot\\Valorant Discord Bot.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\Valorant-Bot\\Valorant Discord Bot\\Valorant Discord Bot.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\Valorant Discord Bot\\Valorant Discord Bot\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\Valorant-Bot\\Valorant Discord Bot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -56,6 +56,10 @@
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.1, )"
             },
             "NetEscapades.Configuration.Yaml": {
               "target": "Package",

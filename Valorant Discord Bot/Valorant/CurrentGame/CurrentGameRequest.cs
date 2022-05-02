@@ -5,6 +5,7 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 using Valorant_Discord_Bot.CommandsServices;
+using Valorant_Discord_Bot.Valorant.ValorantApi;
 
 namespace Valorant_Discord_Bot.Valorant.CurrentGame
 {

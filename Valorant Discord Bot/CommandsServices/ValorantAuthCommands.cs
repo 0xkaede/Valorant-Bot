@@ -19,11 +19,15 @@ using Valorant_Discord_Bot.Valorant.Store;
 using static Valorant_Discord_Bot.DataBase.DataEmums;
 using static Valorant_Discord_Bot.Valorant.Store.WeaponsSkinUuuidModels;
 using static Valorant_Discord_Bot.CommandsServices.ValorantAuthCommands;
+using Valorant_Discord_Bot.Valorant.ValorantApi;
+using Valorant_Discord_Bot.Valorant.RecentMatches;
 
 namespace Valorant_Discord_Bot.CommandsServices
 {
     public class ValorantAuthCommands : ModuleBase
     {
+        public static readonly string ClientPlatform = "ew0KCSJwbGF0Zm9ybVR5cGUiOiAiUEMiLA0KCSJwbGF0Zm9ybU9TIjogIldpbmRvd3MiLA0KCSJwbGF0Zm9ybU9TVmVyc2lvbiI6ICIxMC4wLjE5MDQyLjEuMjU2LjY0Yml0IiwNCgkicGxhdGZvcm1DaGlwc2V0IjogIlVua25vd24iDQp9";
+
         public static string AccessToken { get; set; }
         public static string EntitlementToken { get; set; }
         public static string puuid { get; set; }
@@ -50,7 +54,96 @@ namespace Valorant_Discord_Bot.CommandsServices
             public string Peak_RankName = "";
         }
 
-        [Command("Store")]
+        [Command("wallet")]
+        public async Task Wallet(params string[] args)
+        {
+            var username = args[0];
+
+            DataBaseResponse CheckUser = Manager.CheckForUser(username);
+            if (CheckUser == DataBaseResponse.NotFound)
+            {
+                var Authbuilder = DiscordEmbedAdder.AdderSmall("User Not Found!", $"We coundnt find your Profile in our database!\nPlease make sure you have create an account by using\n{Configuration.DiscordPrefix}AddUser <RiotUsername> <RiotPassword> <RiotRegion> in DMS!").Build();
+
+                await Context.Channel.SendMessageAsync(null, false, Authbuilder);
+                return;
+            }
+            else if (CheckUser == DataBaseResponse.Found)
+                userdata = Manager.UserInfo(username);
+
+            DataModels userinfo = JsonConvert.DeserializeObject<DataModels>(userdata);
+
+            bool successful = Authentication.Login(userinfo.valorantDetails.Username, Encryption.Decrypt(userinfo.valorantDetails.password, Configuration.EncryptionKey));
+            if (!successful)
+            {
+                var Authbuilder = DiscordEmbedAdder.AdderSmall("Auth Error!", $"There was an error with Authentication. Make sure that,\n2FA is disabled on your account,\nCheck if your password is right").Build();
+
+                await Context.Channel.SendMessageAsync(null, false, Authbuilder);
+                return;
+            }
+
+            Authentication.GetUserInfo(AccessToken);
+
+            WalletModels wallet = JsonConvert.DeserializeObject<WalletModels>(StoreRequest.GetWallet(userinfo.valorantDetails.region, userinfo.valorantData.puuid));
+
+            var walletEmbed = DiscordEmbedAdder.AdderPoints(wallet, userinfo).Build();
+
+            await Context.Channel.SendMessageAsync(null, false, walletEmbed);
+        }
+
+        [Command("recentmatches")]
+        public async Task recentmatches(params string[] args)
+        {
+            var username = args[0];
+
+            DataBaseResponse CheckUser = Manager.CheckForUser(username);
+            if (CheckUser == DataBaseResponse.NotFound)
+            {
+                var Authbuilder = DiscordEmbedAdder.AdderSmall("User Not Found!", $"We coundnt find your Profile in our database!\nPlease make sure you have create an account by using\n{Configuration.DiscordPrefix}AddUser <RiotUsername> <RiotPassword> <RiotRegion> in DMS!").Build();
+
+                await Context.Channel.SendMessageAsync(null, false, Authbuilder);
+                return;
+            }
+            else if (CheckUser == DataBaseResponse.Found)
+                userdata = Manager.UserInfo(username);
+
+            DataModels userinfo = JsonConvert.DeserializeObject<DataModels>(userdata);
+
+            bool successful = Authentication.Login(userinfo.valorantDetails.Username, Encryption.Decrypt(userinfo.valorantDetails.password, Configuration.EncryptionKey));
+            if (!successful)
+            {
+                var Authbuilder = DiscordEmbedAdder.AdderSmall("Auth Error!", $"There was an error with Authentication. Make sure that,\n2FA is disabled on your account,\nCheck if your password is right").Build();
+
+                await Context.Channel.SendMessageAsync(null, false, Authbuilder);
+                return;
+            }
+
+            Authentication.GetUserInfo(AccessToken);
+
+            MatchHistoryModels matchhistory = JsonConvert.DeserializeObject<MatchHistoryModels>(RecentMatchesRequests.MatchHistory(userinfo.valorantData.puuid, userinfo.valorantDetails.region));
+
+            var matchestest = "";
+
+            foreach (var match in matchhistory.history)
+            {
+                Console.WriteLine("match");
+                if (match.matchID == "unrated")
+                    matchestest += $"{match.matchID} | {match.queueID}\n";
+            }
+
+            await Context.Channel.SendMessageAsync(matchestest);
+
+            //try
+            //{
+            //    var b = RecentMatchesRequests.MatchDetails(matchtest, userinfo.valorantDetails.region);
+            //}
+            //catch (Exception ex)
+            //{
+            //    await Context.Channel.SendMessageAsync(ex.ToString());
+            //}
+
+        }
+
+        [Command("store")]
         public async Task Store(params string[] args)
         {
             var username = args[0];
@@ -85,7 +178,7 @@ namespace Valorant_Discord_Bot.CommandsServices
 
             foreach (var skin in Skins)
             {
-                var WeaponSkin = DiscordEmbedAdder.AdderSkin(StoreRequest.GetWeaponSkinUuid(skin), StoreRequest.GetOffers(userinfo.valorantDetails.region)).Build();
+                var WeaponSkin = DiscordEmbedAdder.AdderSkin(ValorantApiRequests.GetWeaponSkinUuid(skin), StoreRequest.GetOffers(userinfo.valorantDetails.region)).Build();
                 await Context.Channel.SendMessageAsync(null, false, WeaponSkin);
             }
 
@@ -99,7 +192,7 @@ namespace Valorant_Discord_Bot.CommandsServices
             await Context.Channel.SendMessageAsync(null, false, timeEmbed);
         }
 
-        [Command("CurrentGame")]
+        [Command("curretgame")]
         public async Task CurrentGame(params string[] args)
         {
             var username = args[0];
@@ -178,8 +271,6 @@ namespace Valorant_Discord_Bot.CommandsServices
                 }
                 else tier = competitivetiers.data.tiers.FirstOrDefault(x => x.tier == competitiveupdates.matches.FirstOrDefault().TierAfterUpdate);
 
-                Console.WriteLine(player.Subject + ":" + tier.tierName);
-
                 var Info = new PlayerGameInfo
                 {
                     ID = player.Subject,
@@ -232,7 +323,7 @@ namespace Valorant_Discord_Bot.CommandsServices
             }
         }
 
-        [Command("AddUser")]
+        [Command("adduser")]
         public async Task AddUser(params string[] args)
         {
             var username = args[0];
@@ -242,6 +333,7 @@ namespace Valorant_Discord_Bot.CommandsServices
             if (Context.Client.GetDMChannelAsync(Context.Channel.Id).Result == null)
             {
                 Context.Message.DeleteAsync();
+
                 var Authbuilder = DiscordEmbedAdder.AdderSmall("DMS ONLY!", $"This command only works in DMS!\nFor your safty please change your password **ASAP**!").Build();
 
                 await Context.Channel.SendMessageAsync(null, false, Authbuilder);
@@ -284,7 +376,7 @@ namespace Valorant_Discord_Bot.CommandsServices
             await Context.Channel.SendMessageAsync(null, false, builder);
         }
 
-        [Command("DelUser")]
+        [Command("deluser")]
         public async Task DelUser(params string[] args)
         {
             var username = args[0].ToLower();
@@ -332,7 +424,7 @@ namespace Valorant_Discord_Bot.CommandsServices
             }
         }
 
-        [Command("UpdatePass")]
+        [Command("updatepass")]
         public async Task UpdatePass(params string[] args)
         {
             var username = args[0].ToLower();
@@ -419,7 +511,8 @@ namespace Valorant_Discord_Bot.Store.Util
                 Description = desc,
                 Color = userinfo.TeamColor,
                 Fields = FieldList,
-                ThumbnailUrl = userinfo.CharactorIcon
+                ThumbnailUrl = userinfo.CharactorIcon,
+
             };
         }
 
@@ -437,6 +530,34 @@ namespace Valorant_Discord_Bot.Store.Util
                 Description = $"Valorant Points: {offer.cost.CostID} !",
                 ThumbnailUrl = item.information.displayIcon,
                 Color = Color.Red
+            };
+        }
+
+        public static EmbedBuilder AdderPoints(WalletModels wallet, DataModels userinfo)
+        {
+            List<EmbedFieldBuilder> FieldList = new List<EmbedFieldBuilder>();
+
+            FieldList.Add(new EmbedFieldBuilder()
+            {
+                Name = "Valorant Points:",
+                Value = wallet.balances.Valorant,
+                IsInline = true,
+            });
+
+            FieldList.Add(new EmbedFieldBuilder()
+            {
+                Name = "Radianite Points:",
+                Value = wallet.balances.Radianite,
+                IsInline = true,
+            });
+
+            return new EmbedBuilder()
+            {
+                Title = $"{userinfo.valorantDetails.Username} Wallet",
+                Description = $"Here is {userinfo.valorantDetails.Username} Wallet",
+                Color = Color.Red,
+                Fields = FieldList,
+
             };
         }
     }

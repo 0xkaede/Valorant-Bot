@@ -38,3 +38,72 @@ C:\Users\User\Documents\Valorant Discord Bot\Valorant Discord Bot\obj\Debug\netc
 C:\Users\User\Documents\Valorant Discord Bot\Valorant Discord Bot\obj\Debug\netcoreapp3.1\Valorant Discord Bot.pdb
 C:\Users\User\Documents\Valorant Discord Bot\Valorant Discord Bot\obj\Debug\netcoreapp3.1\Valorant Discord Bot.genruntimeconfig.cache
 C:\Users\User\Documents\Valorant Discord Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\RestSharp.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Valorant Discord Bot.exe
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Valorant Discord Bot.deps.json
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Valorant Discord Bot.runtimeconfig.json
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Valorant Discord Bot.runtimeconfig.dev.json
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Valorant Discord Bot.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Valorant Discord Bot.pdb
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Discord.Net.Commands.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Discord.Net.Core.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Discord.Net.Interactions.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Discord.Net.Rest.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Discord.Net.Webhook.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Discord.Net.WebSocket.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\NetEscapades.Configuration.Yaml.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\RestSharp.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\System.Interactive.Async.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\System.Linq.Async.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\YamlDotNet.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\System.Reactive.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\System.Reactive.xml
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\obj\Debug\netcoreapp3.1\Valorant Discord Bot.csproj.AssemblyReference.cache
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\obj\Debug\netcoreapp3.1\Valorant Discord Bot.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\obj\Debug\netcoreapp3.1\Valorant Discord Bot.AssemblyInfoInputs.cache
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\obj\Debug\netcoreapp3.1\Valorant Discord Bot.AssemblyInfo.cs
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\obj\Debug\netcoreapp3.1\Valorant Discord Bot.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\obj\Debug\netcoreapp3.1\Valorant Discord Bot.csproj.CopyComplete
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\obj\Debug\netcoreapp3.1\Valorant Discord Bot.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\obj\Debug\netcoreapp3.1\Valorant Discord Bot.pdb
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\obj\Debug\netcoreapp3.1\Valorant Discord Bot.genruntimeconfig.cache
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.CommandLine.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Configuration.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Console.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Debug.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.EventLog.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.EventSource.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\System.Diagnostics.EventLog.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\System.Security.AccessControl.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\System.Security.Principal.Windows.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Diagnostics.EventLog.Messages.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Diagnostics.EventLog.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Users\User\Documents\Valorant-Bot\Valorant Discord Bot\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
